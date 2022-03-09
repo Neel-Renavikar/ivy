@@ -17,7 +17,6 @@ General
    general/array_equal.rst
    general/dtype_bits.rst
    general/clip.rst
-   general/round.rst
    general/floormod.rst
    general/floor.rst
    general/abs.rst
