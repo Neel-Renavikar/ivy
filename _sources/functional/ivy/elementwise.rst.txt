@@ -12,9 +12,11 @@ Elementwise
    :maxdepth: -1
    :caption: Elementwise
 
+   elementwise/bitwise_invert.rst
    elementwise/bitwise_and.rst
    elementwise/ceil.rst
    elementwise/isfinite.rst
+   elementwise/asin.rst
    elementwise/isinf.rst
    elementwise/less_equal.rst
    elementwise/asinh.rst
