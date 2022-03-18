@@ -40,4 +40,5 @@ Elementwise
    elementwise/tanh.rst
    elementwise/sinh.rst
    elementwise/square.rst
+   elementwise/round.rst
 
