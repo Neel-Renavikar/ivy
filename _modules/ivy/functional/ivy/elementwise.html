@@ -277,6 +277,36 @@
     <span class="k">return</span> <span class="n">_cur_framework</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="floor"><a class="viewcode-back" href="../../../../functional/ivy/elementwise/floor.html#ivy.functional.ivy.elementwise.floor">[docs]</a><span class="k">def</span> <span class="nf">floor</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">])</span>\
+        <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Rounds each element ``x_i`` of the input array ``x`` to the greatest (i.e., closest to ``+infinity``) integer-valued number that is not greater than ``x_i``.</span>
+
+<span class="sd">    **Special cases**</span>
+
+<span class="sd">    - If ``x_i`` is already integer-valued, the result is ``x_i``.</span>
+
+<span class="sd">    For floating-point operands,</span>
+
+<span class="sd">    - If ``x_i`` is ``+infinity``, the result is ``+infinity``.</span>
+<span class="sd">    - If ``x_i`` is ``-infinity``, the result is ``-infinity``.</span>
+<span class="sd">    - If ``x_i`` is ``+0``, the result is ``+0``.</span>
+<span class="sd">    - If ``x_i`` is ``-0``, the result is ``-0``.</span>
+<span class="sd">    - If ``x_i`` is ``NaN``, the result is ``NaN``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x:</span>
+<span class="sd">        input array. Should have a numeric data type.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out:</span>
+<span class="sd">        an array containing the rounded result for each element in ``x``. The returned array must have the same data type as ``x``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_cur_framework</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="isfinite"><a class="viewcode-back" href="../../../../functional/ivy/elementwise/isfinite.html#ivy.functional.ivy.elementwise.isfinite">[docs]</a><span class="k">def</span> <span class="nf">isfinite</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">])</span>\
         <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -733,7 +763,26 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">_cur_framework</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">negative</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
 
-  
+
+<div class="viewcode-block" id="not_equal"><a class="viewcode-back" href="../../../../functional/ivy/elementwise/not_equal.html#ivy.functional.ivy.elementwise.not_equal">[docs]</a><span class="k">def</span> <span class="nf">not_equal</span><span class="p">(</span><span class="n">x1</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span> <span class="n">x2</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes the truth value of ``x1_i != x2_i`` for each element ``x1_i`` of the input array ``x1`` with the respective element ``x2_i`` of the input array ``x2``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x1:</span>
+<span class="sd">        first input array. Should have a numeric data type.</span>
+<span class="sd">    x2:</span>
+<span class="sd">        second input array. Must be compatible with ``x1`` (see :ref:`broadcasting`). Should have a numeric data type.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out:</span>
+<span class="sd">        an array containing the element-wise results. The returned array must have a data type of ``bool``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_cur_framework</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span><span class="o">.</span><span class="n">not_equal</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="tanh"><a class="viewcode-back" href="../../../../functional/ivy/elementwise/tanh.html#ivy.functional.ivy.elementwise.tanh">[docs]</a><span class="k">def</span> <span class="nf">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculates an implementation-dependent approximation to the hyperbolic tangent,</span>
@@ -784,17 +833,6 @@
   
 <span class="c1"># Extra #</span>
 <span class="c1"># ------#</span>
-<div class="viewcode-block" id="round"><a class="viewcode-back" href="../../../../functional/ivy/elementwise/round.html#ivy.functional.ivy.elementwise.round">[docs]</a><span class="k">def</span> <span class="nf">round</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">])</span>\
-        <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Rounds the values of an array to the nearest integer, element-wise.</span>
-
-<span class="sd">    :param x: Input array containing elements to round.</span>
-<span class="sd">    :type x: array</span>
-<span class="sd">    :return: An array of the same shape and type as x, with the elements rounded to integers.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">_cur_framework</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
-
 </pre></div>
 
            </div>
