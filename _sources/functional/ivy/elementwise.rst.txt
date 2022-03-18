@@ -29,6 +29,7 @@ Elementwise
    elementwise/less.rst
    elementwise/cos.rst
    elementwise/logical_not.rst
+   elementwise/acos.rst
    elementwise/logical_or.rst
    elementwise/logical_and.rst
    elementwise/acosh.rst
@@ -37,5 +38,4 @@ Elementwise
    elementwise/tanh.rst
    elementwise/sinh.rst
    elementwise/square.rst
-   elementwise/round.rst
 
